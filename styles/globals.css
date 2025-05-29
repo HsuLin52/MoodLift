@@ -14,14 +14,119 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff0f5;
+  color: #FDE3E6;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-box {
+  margin-top: 0.5rem;
+}
+
+.page {
+  padding: 2rem;
+  text-align: center;
+  color: #E36B89;
+}
+
+.page h1 {
+  margin-top: 10px;
+}
+
+.page h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #E36B89;
+  margin-bottom: 0.3rem;
+}
+
+.history ul {
+  list-style: none;
+  color: #E36B89;
+}
+
+.history h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #E36B89;
+}
+
+button {
+  background-color: #E36B89;
+  border: none;
+  color: #FDE3E6;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+button:hover {
+  background-color: #e78da4;
+}
+
+.display-box {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: #ffe6f0;
+  color:#E36B89;
+  border: 2px dashed #E36B89;
+  border-radius: 12px;
+  display: inline-block;
+  width: 570px;
+}
+
+.mood {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #E36B89;
+  width: fit-content;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.mood-box {
+  margin-top: 1rem;
+  width: fit-content;
+  padding: 1rem;
+  background: #ffe6f0;
+  color:#E36B89;
+  border: 2px dashed #E36B89;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+select {
+  background-color: #ffe6f0;
+  border:2px dashed #E36B89;
+  color: #E36B89;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #E36B89;
+  box-shadow: 0 0 5px #f7a9bd;
 }
 
 * {
