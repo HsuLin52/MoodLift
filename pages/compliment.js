@@ -3,6 +3,7 @@ import ComplimentButton from '../components/ComplimentButton';
 import ComplimentDisplay from '../components/ComplimentDisplay';
 import { useState } from 'react';
 
+// Defining array of compliments
 const compliments = [
   "You're doing amazing ✨",
     "Your smile brightens up the room 🌟",
@@ -36,25 +37,31 @@ const compliments = [
 ];
 
 export default function ComplimentPage() {
-    const [current, setCurrent] = useState('');
+
+    // State to store the currently selected compliment
+    const [compliment, setCompliment] = useState('');
+
+    // State to store the list of all compliments given
     const [history, setHistory] = useState([]);
 
+    // Function that chooses a random compliment and updates both states
     function giveCompliment() {
-        const random = compliments[Math.floor(Math.random() * compliments.length)];
-        setCurrent(random);
-        setHistory([...history, random]);
+        const random = compliments[Math.floor(Math.random() * compliments.length)]; // Picking a random compliment from the array
+        setCompliment(random); // Setting the current compliment to display
+        setHistory([...history, random]); // Adding the new compliment to the history list
     }
 
     return (
         <div className="page">
             <Navbar />
             <h1>Compliment Machine 💌</h1>
-            <ComplimentButton onClick={giveCompliment} />
-            <ComplimentDisplay message={current} />
-            {history.length > 0 && (
+            <ComplimentButton onClick={giveCompliment} /> {/* Button to get a new compliment */}
+            <ComplimentDisplay message={compliment} /> {/* Display the current compliment */}
+            {history.length > 0 && ( // Shows the compliments history only if at least one compliment has been generated
                 <div className="history">
                     <h3>Compliment History</h3>
                     <ul>
+                        {/* Maps each compliment in history into a list item */}
                         {history.map((item, index) => (
                         <li key={index}>🎀 {item}</li>
                         ))}

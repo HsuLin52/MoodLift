@@ -3,6 +3,7 @@ import AffirmationButton from '../components/AffirmationButton';
 import { useState } from 'react';
 import AffirmationDisplay from '../components/AffirmationDisplay';
 
+// Defining array of affirmations
 const affirmations = [
     "I am enough 💖",
     "I radiate positivity 🌸",
@@ -36,25 +37,31 @@ const affirmations = [
 ];
 
 export default function AffirmationPage() {
+
+    // State to store the currently selected affirmation
     const [affirmation, setAffirmation] = useState("");
+
+    // State to store the list of all affirmations given
     const [history, setHistory] = useState([]);
 
+    // Function that chooses a random affirmation and updates both states
     function getAffirmation() {
-        const random = affirmations[Math.floor(Math.random() * affirmations.length)];
-        setAffirmation(random);
-        setHistory([...history, random]);
+        const random = affirmations[Math.floor(Math.random() * affirmations.length)]; // Picking a random affirmation from the array
+        setAffirmation(random); // Setting the current affirmations to display
+        setHistory([...history, random]); // Adding the new affirmation to the history list
     }
 
     return (
         <div className="page">
             <Navbar />
             <h1>Daily Affirmation 🌷</h1>
-            <AffirmationButton onClick={getAffirmation} />
-            <AffirmationDisplay message={affirmation} />
-            {history.length > 0 && (
+            <AffirmationButton onClick={getAffirmation} /> {/* Button to get a new affirmation */}
+            <AffirmationDisplay message={affirmation} /> {/* Display the current affirmation */}
+            {history.length > 0 && ( // Shows the affirmations history only if at least one compliment has been generated
                 <div className="history">
                     <h3>Affirmations List</h3>
                     <ul>
+                        {/* Maps each compliment in history into a list item */}
                         {history.map((item, index) => (
                         <li key={index}>🎀 {item}</li>
                         ))}
